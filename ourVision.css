@@ -1,7 +1,7 @@
 #page2 {
     min-height: 100vh;
     width: 100%;
-    background-color: #efeae3;
+    
     padding: 5vw 3vw;
 }
 
@@ -50,12 +50,13 @@
 }
 
 #bottom {
+    border-radius: 10px;
     width: 100%;
-    height: 120vh;
+    height: 110vh;
     margin-top: 7vw;
     display: flex;
     align-items: flex-start;
-    background-color: #efeae3;
+    background-color: #efeae3ee;
     justify-content: space-between;
     padding: 4vw;
     position: relative;
@@ -81,15 +82,18 @@
     margin-left: 10vw;
     margin-top: 5vw;
     top: 20%;
-    left: 30%;
+    left: 20%;
     padding: 7vw 6vw;
+    position: relative;
 }
 
 .hero11 {
+    top: -3%;
+    left:10%;
     height: 40vw;
     width: 40vw;
     border-radius: 50%;
-    background-color: orangered;
+    background-color: rgb(38, 175, 171);
     filter: blur(35px);
     position: absolute;
     animation-name: anime24;
@@ -100,10 +104,12 @@
 }
 
 .hero12 {
+    top: -3%;
+    left: 10%;
     height: 40vw;
     width: 40vw;
     border-radius: 50%;
-    background-color: orangered;
+    background-color: rgb(37, 171, 153);
     filter: blur(30px);
     position: absolute;
     animation-name: anime;
@@ -161,7 +167,9 @@
     width: 20%;
 }
 
-#page2-right img {
+#page2-right video {
+    object-fit: cover;
+    height: 100%;
     width: 100%;
     border-radius: 15px;
     margin-bottom: 3vw;
