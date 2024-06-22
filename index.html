@@ -1,305 +1,394 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="ourVision.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite App</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="ourVision.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
-</head>
+  <body>
+    <!-- Header -->
+    <nav class="border-gray-200 bg-[#ffffff30] fixed w-full">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
 
-<body>
-  <!-- Header -->
-  <header class="flex justify-between items-center py-4 px-8">
-    <div class="text-3xl font-bold">TATA</div>
-    <nav class="space-x-4">
-      <a href="#" class="hover:underline">Vehicles</a>
-      <a href="#" class="hover:underline">Energy</a>
-      <a href="#" class="hover:underline">Charging</a>
-      <a href="#" class="hover:underline">Discover</a>
-      <a href="#" class="hover:underline">Shop</a>
+          <svg
+            width="200"
+            height="60"
+            viewBox="0 0 200 60"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <!-- Circle and .ev -->
+            <circle
+              cx="155"
+              cy="30"
+              r="18"
+              stroke="black"
+              stroke-width="2"
+              fill="none"
+            />
+            <circle cx="135" cy="30" r="2" fill="black" />
+            <text
+              x="140"
+              y="35"
+              font-family="Arial"
+              font-size="20"
+              fill="black"
+            >
+              ev
+            </text>
+          </svg>
+        </a>
+        <button
+          data-collapse-toggle="navbar-hamburger"
+          type="button"
+          class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+          aria-controls="navbar-hamburger"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Open main menu</span>
+          <svg
+            class="w-5 h-5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 17 14"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M1 1h15M1 7h15M1 13h15"
+            />
+          </svg>
+        </button>
+        <div class="hidden w-full" id="navbar-hamburger">
+          <ul
+            class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-white bg-blue-700 rounded dark:bg-blue-600"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </nav>
-    <div class="space-x-4">
-      <a href="#"><span class="material-icons">help_outline</span></a>
-      <a href="#"><span class="material-icons">language</span></a>
-      <a href="#"><span class="material-icons">account_circle</span></a>
-    </div>
-  </header>
-
-  <div class="w-full h-[70vh] flex item-center justify-between bg-gray-600 ">
-    <!-- Main Content -->
-    <main class="text-center w-[70%] h-full bg-green-500">
-      <div id="vehicles-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8 py-12"></div>
-    </main>
-
-    <!-- Sidebar -->
-    <div class=" bg-blue-500 p-4 space-y-2">
-      <a href="#" class="block text-gray-700 hover:text-blue-500">Degital Showroom</a>
-      <a href="#" class="block text-gray-700 hover:text-blue-500">Used Cars</a>
-      <a href="#" class="block text-gray-700 hover:text-blue-500">Demo Drive</a>
-      <a href="#" class="block text-gray-700 hover:text-blue-500">Trade-in</a>
-      <a href="#" class="block text-gray-700 hover:text-blue-500">Compare</a>
-      <a href="#" class="block text-gray-700 hover:text-blue-500">Help Me Charge</a>
-      <a href="#" class="block text-gray-700 hover:text-blue-500">Fleet</a>
-      <a href="#" class="block text-gray-700 hover:text-blue-500">Semi</a>
-      <a href="#" class="block text-gray-700 hover:text-blue-500">Roadster</a>
-    </div>
-  </div>
-
-
-  <!-- oor visons -->
-  <div id="page2">
-    <div id="moving-text">
-      <div class="con">
-        <h1>EXPERIENCES
-        </h1>
-        <div class="gola"></div>
-        <h1>
-          CONTENT
-        </h1>
-        <div class="gola"></div>
-        <h1>
-          ENVIRONMENTS
-        </h1>
-        <div class="gola"></div>
+    <div class="w-full h-[80vh] bg-[#e6e1dc] flex -translate-y-full absolute">
+      <div class="w-[70%] h-full selection: text-center">
+        <div
+          id="vehicles-container"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8 py-12"
+        ></div>
       </div>
-      <div class="con">
-        <h1>EXPERIENCES
-        </h1>
-        <div class="gola"></div>
-        <h1>
-          CONTENT
-        </h1>
-        <div class="gola"></div>
-        <h1>
-          ENVIRONMENTS
-        </h1>
-        <div class="gola"></div>
-      </div>
-      <div class="con">
-        <h1>EXPERIENCES
-        </h1>
-        <div class="gola"></div>
-        <h1>
-          CONTENT
-        </h1>
-        <div class="gola"></div>
-        <h1>
-          ENVIRONMENTS
-        </h1>
-        <div class="gola"></div>
-
-      </div>
-    </div>
-    <div class="text-center mb-10">
-      <h4 class="text-[1.4vw]">Our vision
-    
-      </h4>
-      <h2 class="mt-[1vw] text-[2vw] leading-[2vw]">We innovate mobility solutions <br> with passion to enhance the quality of life.</h2>
-    </div>
-    <div id="bottom" >
-      <div id="heading-part">
-        <h1>First in India to mainstream <br>
-          EVs for people mobility, we<br>
-          are now making EVs more <br>
-          purposeful and accessible with <br>
-          a full suiteof solutions <br>
-          across personal, public <br> and cargo transport
-        </h1>
-
-        <div id="animation">
-          <div class="hero11">
-
-          </div>
-          <div class="hero12">
-
-          </div>
-        </div>
-
-
-
-
-      </div>
-
-      <div id="page2-right">
-        <video src="./public/ourvision.mp4" loop autoplay muted></video>
-        <p>We are making responsible choices. By prioritising sustainable mobility, safety, emission reduction and use
-          of
-          eco-friendly materials, we are driving meaningful change.</p>
-      </div>
+      <div id="navContainer" class="w-1/3 h-full pl-[5vw] pt-24 bg-amber-500 text-lg "></div>
     </div>
 
-  </div>
-
-  <!-- our rage of the prducts -->
-  <div class="min-h-screen w-full relative p-[3vw]">
-    <div class="text-center">
-      <h4 class="text-[1.4vw]">Our Range
-        <span class="bg-black py-0.5 px-1 rounded-md text-[#faf8f3] text-sm ">Models</span>↵
-      </h4>
-      <h2 class="mt-[1vw] text-[2vw] leading-[2vw]">With most number of homegrown electric cars on road already, our
-        cars are helping India<br>
-        go.ev. Driven over 2 billion kms</h2>
+    <div class="w-full h-screen bg-black">
+      <video src="./public/intro-video.mp4" class="w-full h-full object-cover" loop autoplay muted></video>
     </div>
-    <div class="page3-nav"><span>Transforming visions into reality.</span><span>↵See the products</span></div>
-    <div id="page3-element">
-      <div class="box">
-        <img src="./assets/beyond-powercover1.jpeg" alt="">
 
-        <video src="./public/punchcover.webm" loop autoplay muted></video>
+    <!-- oor visons -->
+    <div id="page2">
+      <div class="text-center mb-10">
+        <h4 class="text-[1.4vw]">Our vision</h4>
+        <h2 class="mt-[1vw] text-[2vw] leading-[2vw]">
+          We innovate mobility solutions <br />
+          with passion to enhance the quality of life.
+        </h2>
       </div>
-      <div class="box">
-        <img src="./assets/cover2.png" alt="">
-        <video src="./public/nexoncover.mp4" loop autoplay muted></video>
-
-
-      </div>
-      <div class="box">
-        <img src="./assets/cover3.webp" alt="">
-        <video src="./public/taigocover.mp4" loop autoplay muted></video>
-      </div>
-      <div class="box">
-        <img src="./assets/cover4.jpeg" alt="">
-        <video src="./public/taigorcover.mp4" loop autoplay muted></video>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- test drive -->
-  <div class="container mx-auto p-8 ">
-    <div class="text-center mb-10">
-      <h4 class="text-[1.4vw]">Schedule
-        a Test
-        Drive
-
-      </h4>
-      <h2 class="mt-[1vw] text-[2vw] leading-[2vw]">* Prices indicated are Ex-showroom prices. Prices are subject to
-        change without prior <br> information at
-        discretion of<br>
-        TPEML. Contact your nearest Tata Motors dealer for exact prices.
-      </h2>
-    </div>
-    <div class="flex flex-col md:flex-row border-2 border-black rounded-lg h-screen">
-      <div class="md:w-[40%] bg-[#0b0500] flex items-center justify-center">
-        <div class="pl-10">
-          <h1 class="text-4xl md:text-5xl font-bold leading-tight text-[#efeae3]">
-            Schedule
-            <br>a Test
-            <br>Drive
+      <div id="bottom">
+        <div id="heading-part">
+          <h1>
+            First in India to mainstream <br />
+            EVs for people mobility, we<br />
+            are now making EVs more <br />
+            purposeful and accessible with <br />
+            a full suiteof solutions <br />
+            across personal, public <br />
+            and cargo transport
           </h1>
-          <p class="mt-8 text-[#efeae3] w-52">
-            We know you’ll love our EVs, which is why you can try them for an hour, a day, or a weekend. When you decide
-            you want to
-            keep it, you can buy online and its yours.
+
+          <div id="animation">
+            <div class="hero11"></div>
+            <div class="hero12"></div>
+          </div>
+        </div>
+
+        <div id="page2-right">
+          <video src="./public/ourvision.mp4" loop autoplay muted></video>
+          <p>
+            We are making responsible choices. By prioritising sustainable
+            mobility, safety, emission reduction and use of eco-friendly
+            materials, we are driving meaningful change.
           </p>
-          <a href="#"
-            class="p-3 mt-10  bg-[#111111] border-2 border-[#1f1f1f]  rounded-md  w-40 h-13 flex-1 flex items-center justify-center text-white">Schedule
-            Now <i class="ri-arrow-right-down-line"></i></a>
         </div>
       </div>
-      <div class="md:w-[60%] mt-8 md:mt-0 overflow-hidden">
-        <!-- <img src="./assets/book-a-test-drive-2.avif" alt="Design Project Execution" class="w-full h-full object-fill "> -->
-        <video src="./assets/Nexon-ev-Smart-Digital-DRLs.mp4" class="w-full h-full object-cover" loop muted
-          autoplay></video>
+      <div id="moving-text">
+        <div class="con">
+          <h1>Transcendent</h1>
+          <div class="gola"></div>
+          <h1>Timeless</h1>
+          <div class="gola"></div>
+          <h1>Treasure</h1>
+          <div class="gola"></div>
+        </div>
+        <div class="con">
+          <h1>Transcendent</h1>
+          <div class="gola"></div>
+          <h1>Timeless</h1>
+          <div class="gola"></div>
+          <h1>Treasure</h1>
+          <div class="gola"></div>
+        </div>
+        <div class="con">
+          <h1>Transcendent</h1>
+          <div class="gola"></div>
+          <h1>Timeless</h1>
+          <div class="gola"></div>
+          <h1>Treasure</h1>
+          <div class="gola"></div>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- Footer -->
-  <div class="text-center my-16">
 
-    <h2 class="mt-[1vw] text-[4vw] leading-[2vw]"> About Us
-    </h2>
-  </div>
-  <footer class="bg-[#060606] text-white pt-10 pb-5">
-    <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-10 mb-10   pl-12 ">
-        <div>
-          <h3 class="text-lg font-semibold mb-3">Company</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:underline">About Us</a></li>
-            <li><a href="#" class="hover:underline">Our Mission</a></li>
-            <li><a href="#" class="hover:underline">Team</a></li>
-            <li><a href="#" class="hover:underline">Careers</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold mb-3">Products</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:underline">Scooters</a></li>
-            <li><a href="#" class="hover:underline">Accessories</a></li>
-            <li><a href="#" class="hover:underline">Features</a></li>
-            <li><a href="#" class="hover:underline">FAQs</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold mb-3">Support</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:underline">Warranty</a></li>
-            <li><a href="#" class="hover:underline">Delivery</a></li>
-            <li><a href="#" class="hover:underline">Contact Us</a></li>
-          </ul>
-        </div>
-        <div>
-          <h3 class="text-lg font-semibold mb-3">Resources</h3>
-          <ul class="space-y-2">
-            <li><a href="#" class="hover:underline">Blog</a></li>
-            <li><a href="#" class="hover:underline">Sustainability</a></li>
-            <li><a href="#" class="hover:underline">Community</a></li>
-            <li><a href="#" class="hover:underline">Newsletter</a></li>
-          </ul>
-        </div>
+    <!-- our rage of the prducts -->
+    <div class="min-h-screen w-full relative p-[3vw]">
+      <div class="text-center">
+        <h4 class="text-[1.4vw]">
+          Our Range
+          <span class="bg-black py-0.5 px-1 rounded-md text-[#faf8f3] text-sm"
+            >Models</span
+          >↵
+        </h4>
+        <h2 class="mt-[1vw] text-[2vw] leading-[2vw]">
+          With most number of homegrown electric cars on road already, our cars
+          are helping India<br />
+          go.ev. Driven over 2 billion kms
+        </h2>
       </div>
-
-      <div class="flex space-x-6 px-9 ">
-        <a href="#"
-          class="p-3  bg-[#111111] border-2 border-[#1f1f1f] link rounded-md  w-28 h-20 flex-1 flex items-center justify-center "><i
-            class="ri-instagram-line text-3xl"></i></a>
-        <a href="#"
-          class="p-3  bg-[#111111] border-2 border-[#1f1f1f] link rounded-md w-28 h-20 flex-1 flex items-center justify-center"><i
-            class="ri-facebook-line text-3xl"></i></a>
-        <a href="#"
-          class="p-3  bg-[#111111] border-2 border-[#1f1f1f] link rounded-md w-28 h-20 flex-1 flex items-center justify-center"><i
-            class="ri-linkedin-box-line text-3xl"></i></a>
-        <a href="#"
-          class="p-3  bg-[#111111] border-2 border-[#1f1f1f] link rounded-md w-28 h-20 flex-1 flex items-center justify-center"><i
-            class="ri-youtube-line text-3xl"></i></a>
-        <a href="#"
-          class="p-3  bg-[#111111] border-2 border-[#1f1f1f] link rounded-md w-28 h-20 flex-1 flex items-center justify-center"><i
-            class="ri-twitter-x-line text-3xl"></i></a>
+      <div class="page3-nav">
+        <span>Transforming visions into reality.</span
+        ><span>↵See the products</span>
       </div>
-
-      <h1 class="text-center text-[17vw] font-bold mb-10 leading-[20vw] tata">tata-motors</h1>
-
-      <div class="string">
-        <svg width="1500" height="20" class="w-full">
-          <path d="M 10 10 Q 750 10 1490 10" stroke="white" fill="transparent" />
+      <div class="room">
+        <svg width="1520" height="20" class="w-full">
+          <path d="M 0 10 Q 750 10 1520 10" stroke="black" fill="transparent" />
         </svg>
       </div>
+      <div id="page3-element">
+        <div class="box">
+          <img src="./assets/beyond-powercover1.jpeg" alt="" />
 
-      <div class="flex justify-between items-center">
-        <div class="flex justify-center space-x-6 text-sm">
-          <a href="#" class="hover:underline">Terms & Conditions</a>
-          <a href="#" class="hover:underline">Privacy Policy</a>
-          <a href="#" class="hover:underline">Cookie Policy</a>
+          <video src="./public/punchcover.webm" loop autoplay muted></video>
         </div>
-
-        <div class="text-center mt-5 text-sm">Copyright © 2022 TATA Motors. All Rights Reserved</div>
+        <div class="box">
+          <img src="./assets/cover2.png" alt="" />
+          <video src="./public/nexoncover.mp4" loop autoplay muted></video>
+        </div>
+        <div class="box">
+          <img src="./assets/cover3.webp" alt="" />
+          <video src="./public/taigocover.mp4" loop autoplay muted></video>
+        </div>
+        <div class="box">
+          <img src="./assets/cover4.jpeg" alt="" />
+          <video src="./public/taigorcover.mp4" loop autoplay muted></video>
+        </div>
       </div>
     </div>
-  </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
-    integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="script.js"></script>
-</body>
 
+    <!-- test drive -->
+    <div class="container mx-auto p-8">
+      <div class="text-center mb-10">
+        <h4 class="text-[1.4vw]">Schedule a Test Drive</h4>
+        <h2 class="mt-[1vw] text-[2vw] leading-[2vw]">
+          * Prices indicated are Ex-showroom prices. Prices are subject to
+          change without prior <br />
+          information at discretion of<br />
+          TPEML. Contact your nearest Tata Motors dealer for exact prices.
+        </h2>
+      </div>
+      <div
+        class="flex flex-col md:flex-row border-2 border-black rounded-lg h-screen"
+      >
+        <div class="md:w-[40%] bg-[#0b0500] flex items-center justify-center">
+          <div class="pl-10">
+            <h1
+              class="text-4xl md:text-5xl font-bold leading-tight text-[#efeae3]"
+            >
+              Schedule
+              <br />a Test <br />Drive
+            </h1>
+            <p class="mt-8 text-[#efeae3] w-52">
+              We know you’ll love our EVs, which is why you can try them for an
+              hour, a day, or a weekend. When you decide you want to keep it,
+              you can buy online and its yours.
+            </p>
+            <a
+              href="#"
+              class="p-3 mt-10 bg-[#111111] border-2 border-[#1f1f1f] rounded-md w-40 h-13 flex-1 flex items-center justify-center text-white"
+              >Schedule Now <i class="ri-arrow-right-down-line"></i
+            ></a>
+          </div>
+        </div>
+        <div class="md:w-[60%] mt-8 md:mt-0 overflow-hidden">
+          <!-- <img src="./assets/book-a-test-drive-2.avif" alt="Design Project Execution" class="w-full h-full object-fill "> -->
+          <video
+            src="./assets/Nexon-ev-Smart-Digital-DRLs.mp4"
+            class="w-full h-full object-cover"
+            loop
+            muted
+            autoplay
+          ></video>
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <div class="text-center my-16">
+      <h2 class="mt-[1vw] text-[4vw] leading-[2vw]">About Us</h2>
+    </div>
+    <footer class="bg-[#060606] text-white pt-10 pb-5">
+      <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-10 mb-10 pl-12">
+          <div>
+            <h3 class="text-lg font-semibold mb-3">Company</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:underline">About Us</a></li>
+              <li><a href="#" class="hover:underline">Our Mission</a></li>
+              <li><a href="#" class="hover:underline">Team</a></li>
+              <li><a href="#" class="hover:underline">Careers</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-3">Products</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:underline">Scooters</a></li>
+              <li><a href="#" class="hover:underline">Accessories</a></li>
+              <li><a href="#" class="hover:underline">Features</a></li>
+              <li><a href="#" class="hover:underline">FAQs</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-3">Support</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:underline">Warranty</a></li>
+              <li><a href="#" class="hover:underline">Delivery</a></li>
+              <li><a href="#" class="hover:underline">Contact Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-lg font-semibold mb-3">Resources</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="hover:underline">Blog</a></li>
+              <li><a href="#" class="hover:underline">Sustainability</a></li>
+              <li><a href="#" class="hover:underline">Community</a></li>
+              <li><a href="#" class="hover:underline">Newsletter</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="flex space-x-6 px-9">
+          <a
+            href="#"
+            class="p-3 bg-[#111111] border-2 border-[#1f1f1f] link rounded-md w-28 h-20 flex-1 flex items-center justify-center"
+            ><i class="ri-instagram-line text-3xl"></i
+          ></a>
+          <a
+            href="#"
+            class="p-3 bg-[#111111] border-2 border-[#1f1f1f] link rounded-md w-28 h-20 flex-1 flex items-center justify-center"
+            ><i class="ri-facebook-line text-3xl"></i
+          ></a>
+          <a
+            href="#"
+            class="p-3 bg-[#111111] border-2 border-[#1f1f1f] link rounded-md w-28 h-20 flex-1 flex items-center justify-center"
+            ><i class="ri-linkedin-box-line text-3xl"></i
+          ></a>
+          <a
+            href="#"
+            class="p-3 bg-[#111111] border-2 border-[#1f1f1f] link rounded-md w-28 h-20 flex-1 flex items-center justify-center"
+            ><i class="ri-youtube-line text-3xl"></i
+          ></a>
+          <a
+            href="#"
+            class="p-3 bg-[#111111] border-2 border-[#1f1f1f] link rounded-md w-28 h-20 flex-1 flex items-center justify-center"
+            ><i class="ri-twitter-x-line text-3xl"></i
+          ></a>
+        </div>
+
+        <h1 class="text-center text-[17vw] font-bold mb-10 leading-[20vw] tata">
+          tata-motors
+        </h1>
+
+        <div class="string">
+          <svg width="1500" height="20" class="w-full">
+            <path
+              d="M 10 10 Q 750 10 1490 10"
+              stroke="white"
+              fill="transparent"
+            />
+          </svg>
+        </div>
+
+        <div class="flex justify-between items-center">
+          <div class="flex justify-center space-x-6 text-sm">
+            <a href="#" class="hover:underline">Terms & Conditions</a>
+            <a href="#" class="hover:underline">Privacy Policy</a>
+            <a href="#" class="hover:underline">Cookie Policy</a>
+          </div>
+
+          <div class="text-center mt-5 text-sm">
+            Copyright © 2022 TATA Motors. All Rights Reserved
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="script.js"></script>
+  </body>
 </html>

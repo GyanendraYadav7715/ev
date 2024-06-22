@@ -53,6 +53,33 @@ vehicles.map((vehicle) => {
             `;
   vehiclesContainer.appendChild(vehicleDiv);
 });
+
+
+ const links = [
+   { name: "Digital Showroom", href: "#" },
+   { name: "Test Drive", href: "#" },
+   { name: "Charging Locator", href: "#" },
+   { name: "Dealer Locator", href: "#" },
+   { name: "Request a call back", href: "#" },
+   { name: "Concept Cars", href: "#" },
+   { name: "Rewards", href: "#" },
+   { name: "Exchange Car", href: "#" },
+   { name: "Services", href: "#" },
+   { name: "Accessories", href: "#" },
+   { name: "Account", href: "#" },
+   { name: "About Us", href: "#" },
+   { name: "Sitemap", href: "#" },
+ ];
+
+ const navContainer = document.getElementById("navContainer");
+
+ links.map((link) => {
+   const anchor = document.createElement("a");
+   anchor.href = link.href;
+   anchor.textContent = link.name;
+   anchor.className = "block text-gray-700 hover:text-blue-500 mb-2";
+   navContainer.appendChild(anchor);
+ });
 // our ranges of the products
 
 gsap.from("#page3-top h4", {
