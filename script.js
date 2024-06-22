@@ -89,12 +89,25 @@ gsap.from(".page3-nav span", {
   },
 });
 
+// test deive
+
+gsap.from(".container h1", { duration: 1.5, x: -100, opacity: 0 });
+gsap.from(".container p", { duration: 1.5, x: 100, opacity: 0, delay: 0.5 });
+gsap.from(".container img", { duration: 1.5, scale: 0.8, opacity: 0, delay: 1 });
+gsap.from(".container a", {
+  duration: 1.5,
+  scale: 0.8,
+  opacity: 0,
+  delay: 1,
+});
+
 // footer gsap animation
 // Add event listeners to all links
 document.querySelectorAll(".link").forEach((link) => {
   link.addEventListener("mouseenter", function () {
     const icon = link.querySelector("i");
     gsap.to(icon, {
+      scale: 2,
       rotate: 360,
       duration: 1,
       delay: 0,
@@ -109,17 +122,15 @@ function braketheText() {
   let tata = document.querySelector(".tata");
   let tatah1 = tata.textContent;
   let splitedtext = tatah1.split("");
-  let halfvalue =splitedtext.length/2
+  let halfvalue = splitedtext.length / 2;
   let clutter = "";
 
   splitedtext.forEach(function (e, idx) {
     if (idx < halfvalue) {
-        clutter += `<span class="a">${e}</span>`;
+      clutter += `<span class="a">${e}</span>`;
+    } else {
+      clutter += `<span class="b">${e}</span>`;
     }
-    else {
-        clutter += `<span class="b">${e}</span>`;
-    }
-  
   });
 
   console.log(clutter);
@@ -132,14 +143,12 @@ gsap.from(".tata .a", {
   y: 150,
   duration: 0.6,
   stagger: 0.15,
-  
 });
 gsap.from(".tata .b", {
   opacity: 0,
   y: 150,
   duration: 0.6,
-  stagger:-0.15,
-  
+  stagger: -0.15,
 });
 
 //line svg
