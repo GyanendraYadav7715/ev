@@ -93,12 +93,19 @@ gsap.from(".page3-nav span", {
 
 gsap.from(".container h1", { duration: 1.5, x: -100, opacity: 0 });
 gsap.from(".container p", { duration: 1.5, x: 100, opacity: 0, delay: 0.5 });
-gsap.from(".container img", { duration: 1.5, scale: 0.8, opacity: 0, delay: 1 });
+gsap.from(".container video", {
+  duration: 1.5,
+  scale: 0.8,
+  opacity: 0,
+  delay: 1,
+  
+});
 gsap.from(".container a", {
   duration: 1.5,
   scale: 0.8,
   opacity: 0,
   delay: 1,
+
 });
 
 // footer gsap animation
