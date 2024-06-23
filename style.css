@@ -29,6 +29,11 @@ body {
     transform-origin: right;
 }
 
+.land{
+    background-image: url(./assets/beyond-powercover1.jpeg);
+    background-position: center;
+    background-size: cover;
+}
 .tata {
     overflow: hidden;
     font-family: rejo;

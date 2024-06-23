@@ -49,7 +49,7 @@ vehicles.map((vehicle) => {
                     ${vehicle.links
                       .map(
                         (link) =>
-                          `<a href="${link.href}" class="text-blue-500 hover:underline">${link.text}</a>`
+                          `<a href="${link.href}" class="text-blue-500 hover:underline ">${link.text}</a>`
                       )
                       .join("")}
                 </div>
@@ -266,4 +266,32 @@ document.querySelectorAll("h4").forEach((h4) => {
       ease: "power2.out",
     });
   });
+});
+
+
+let tl = gsap.timeline();
+tl.to(".menu", {
+  top: "0",
+  duration:.6,
+})
+tl.from("#vehicles-container img", {
+  opacity: 0,
+  duration:.8,
+  stagger:.2
+});
+tl.from("#navContainer a", {
+  x: 100,
+  opacity: 0,
+  duration: .7,
+  stagger:.1
+});
+tl.from(".close", {
+  opacity:0
+})
+tl.pause();
+document.querySelector("nav button").addEventListener("click", function () {
+  tl.play();
+})
+document.querySelector(".close").addEventListener("click", function () {
+  tl.reverse();
 });
