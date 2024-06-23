@@ -15,7 +15,7 @@
  body {
      background-color: #faf8f3;
      font-family: "Poppins", sans-serif;
-     /* overflow-x: hidden; */
+     overflow-x: hidden;
  }
 
  /* .link{

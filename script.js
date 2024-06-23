@@ -1,3 +1,6 @@
+// Register the plugin
+gsap.registerPlugin(ScrollTrigger);
+
 const vehicles = [
   {
     name: "Nexon",
@@ -54,33 +57,44 @@ vehicles.map((vehicle) => {
   vehiclesContainer.appendChild(vehicleDiv);
 });
 
+const links = [
+  { name: "Digital Showroom", href: "#" },
+  { name: "Test Drive", href: "#" },
+  { name: "Charging Locator", href: "#" },
+  { name: "Dealer Locator", href: "#" },
+  { name: "Request a call back", href: "#" },
+  { name: "Concept Cars", href: "#" },
+  { name: "Rewards", href: "#" },
+  { name: "Exchange Car", href: "#" },
+  { name: "Services", href: "#" },
+  { name: "Accessories", href: "#" },
+  { name: "Account", href: "#" },
+  { name: "About Us", href: "#" },
+  { name: "Sitemap", href: "#" },
+];
 
- const links = [
-   { name: "Digital Showroom", href: "#" },
-   { name: "Test Drive", href: "#" },
-   { name: "Charging Locator", href: "#" },
-   { name: "Dealer Locator", href: "#" },
-   { name: "Request a call back", href: "#" },
-   { name: "Concept Cars", href: "#" },
-   { name: "Rewards", href: "#" },
-   { name: "Exchange Car", href: "#" },
-   { name: "Services", href: "#" },
-   { name: "Accessories", href: "#" },
-   { name: "Account", href: "#" },
-   { name: "About Us", href: "#" },
-   { name: "Sitemap", href: "#" },
- ];
+const navContainer = document.getElementById("navContainer");
 
- const navContainer = document.getElementById("navContainer");
-
- links.map((link) => {
-   const anchor = document.createElement("a");
-   anchor.href = link.href;
-   anchor.textContent = link.name;
-   anchor.className = "block text-gray-700 hover:text-blue-500 mb-2";
-   navContainer.appendChild(anchor);
- });
+links.map((link) => {
+  const anchor = document.createElement("a");
+  anchor.href = link.href;
+  anchor.textContent = link.name;
+  anchor.className = "block text-gray-700 hover:text-blue-500 mb-2";
+  navContainer.appendChild(anchor);
+});
 // our ranges of the products
+
+gsap.to("#page3-element", {
+  transform: "translate(-33%)",
+  scrollTrigger: {
+    trigger: "#page3-element",
+    scroller: "body",
+    start: "top 10%",
+    end: "top -70%",
+    scrub: 2,
+    pin: true,
+  },
+});
 
 gsap.from("#page3-top h4", {
   opacity: 0,
@@ -125,14 +139,12 @@ gsap.from(".container video", {
   scale: 0.8,
   opacity: 0,
   delay: 1,
-  
 });
 gsap.from(".container a", {
   duration: 1.5,
   scale: 0.8,
   opacity: 0,
   delay: 1,
-
 });
 
 // footer gsap animation
