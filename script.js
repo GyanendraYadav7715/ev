@@ -189,12 +189,22 @@ gsap.from(".tata .a", {
   y: 150,
   duration: 0.6,
   stagger: 0.15,
+  scrollTrigger: {
+    trigger: ".tata",
+    scroller: "body",
+    start: "top 70%",
+  },
 });
 gsap.from(".tata .b", {
   opacity: 0,
   y: 150,
   duration: 0.6,
   stagger: -0.15,
+  scrollTrigger: {
+    trigger: ".tata",
+    scroller: "body",
+    start: "top 70%",
+  },
 });
 
 //line svg
@@ -219,3 +229,41 @@ string.addEventListener("mouseleave", function () {
 });
 
 // gsap animation code is started
+document.querySelectorAll("h2").forEach((h2) => {
+  h2.addEventListener("mouseenter", () => {
+    gsap.to(h2.querySelector(".underline"), {
+      duration: 0.5,
+      scaleX: 1,
+      transformOrigin: "left",
+      ease: "power2.out",
+    });
+  });
+
+  h2.addEventListener("mouseleave", () => {
+    gsap.to(h2.querySelector(".underline"), {
+      duration: 0.5,
+      scaleX: 0,
+      transformOrigin: "right",
+      ease: "power2.out",
+    });
+  });
+});
+document.querySelectorAll("h4").forEach((h4) => {
+  h4.addEventListener("mouseenter", () => {
+    gsap.to(h4.querySelector(".underline"), {
+      duration: 0.5,
+      scaleX: 1,
+      transformOrigin: "left",
+      ease: "power2.out",
+    });
+  });
+
+  h4.addEventListener("mouseleave", () => {
+    gsap.to(h4.querySelector(".underline"), {
+      duration: 0.5,
+      scaleX: 0,
+      transformOrigin: "right",
+      ease: "power2.out",
+    });
+  });
+});
