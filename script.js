@@ -101,6 +101,60 @@ function menucloseopenanime() {
   });
 }
 menucloseopenanime();
+//all-h2-heading-animation
+function headindinganimetion() {
+  gsap.from("#Ourvision h2", {
+    y: -50,
+    duration: 0.8,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: "#Ourvision",
+      scroller: "body",
+      start: "top 30%",
+    },
+  });
+  gsap.from(".charging h2", {
+    y: -50,
+    duration: 0.8,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".charging",
+      scroller: "body",
+      start: "top 30%",
+    },
+  });
+  gsap.from(".ourrange h2", {
+    y: -50,
+    duration: 0.8,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".ourrange",
+      scroller: "body",
+      start: "top 30%",
+    },
+  });
+  gsap.from(".Schedule h2", {
+    y: -50,
+    duration: 0.8,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".Schedule h2",
+      scroller: "body",
+      start: "top -30%",
+    },
+  });
+  gsap.from(".about h2", {
+    y: -50,
+    duration: 0.8,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".about ",
+      scroller: "body",
+      start: "top -30%",
+    },
+  });
+}
+headindinganimetion();
 
 gsap.to(".page3-element", {
   transform: "translate(-33%)",
@@ -150,101 +204,124 @@ gsap.from(".page3-nav span", {
 
 // test deive
 
-gsap.from(".container h1", { duration: 1.5, x: -100, opacity: 0 });
-gsap.from(".container p", { duration: 1.5, x: 100, opacity: 0, delay: 0.5 });
-gsap.from(".container video", {
+let Scheduletl = gsap.timeline();
+
+Scheduletl.from(".container h1", {
   duration: 1.5,
-  scale: 0.8,
+  x: -100,
   opacity: 0,
-  delay: 1,
 });
-gsap.from(".container a", {
+Scheduletl.from(".container p", {
+  duration: 1.5,
+  x: 100,
+  opacity: 0,
+});
+Scheduletl.from(".container video", {
   duration: 1.5,
   scale: 0.8,
   opacity: 0,
-  delay: 1,
+});
+Scheduletl.from(".container a", {
+  duration: 1.5,
+  scale: 0.8,
+  opacity: 0,
 });
 
 // footer gsap animation
-// Add event listeners to all links
-document.querySelectorAll(".link").forEach((link) => {
-  link.addEventListener("mouseenter", function () {
-    const icon = link.querySelector("i");
-    gsap.to(icon, {
-      scale: 2,
-      rotate: 360,
-      duration: 1,
-      delay: 0,
-      yoyo: true,
+function forFooterallanimations() {
+  // Add event listeners to all links
+  document.querySelectorAll(".link").forEach((link) => {
+    link.addEventListener("mouseenter", function () {
+      const icon = link.querySelector("i");
+      gsap.to(icon, {
+        scale: 2,
+        rotate: 360,
+        duration: 1,
+        delay: 0,
+        yoyo: true,
+      });
     });
   });
-});
-
-// h1 tata motors
-
-function braketheText() {
-  let tata = document.querySelector(".tata");
-  let tatah1 = tata.textContent;
-  let splitedtext = tatah1.split("");
-  let halfvalue = splitedtext.length / 2;
-  let clutter = "";
-
-  splitedtext.forEach(function (e, idx) {
-    if (idx < halfvalue) {
-      clutter += `<span class="a">${e}</span>`;
-    } else {
-      clutter += `<span class="b">${e}</span>`;
-    }
+  document.querySelectorAll(".link").forEach((link) => {
+    link.addEventListener("mouseleave", function () {
+      const icon = link.querySelector("i");
+      gsap.to(icon, {
+        scale: 1,
+        rotate: -360,
+        duration: 1,
+        delay: 0,
+        yoyo: true,
+      });
+    });
   });
 
-  console.log(clutter);
-  tata.innerHTML = clutter;
+  // h1 tata motors
+
+  function braketheText() {
+    let tata = document.querySelector(".tata");
+    let tatah1 = tata.textContent;
+    let splitedtext = tatah1.split("");
+    let halfvalue = splitedtext.length / 2;
+    let clutter = "";
+
+    splitedtext.forEach(function (e, idx) {
+      if (idx < halfvalue) {
+        clutter += `<span class="a">${e}</span>`;
+      } else {
+        clutter += `<span class="b">${e}</span>`;
+      }
+    });
+
+    console.log(clutter);
+    tata.innerHTML = clutter;
+  }
+  braketheText();
+
+  gsap.from(".tata .a", {
+    opacity: 0,
+    y: 150,
+    duration: 0.6,
+    stagger: 0.15,
+    scrollTrigger: {
+      trigger: ".tata",
+      scroller: "body",
+      start: "top 70%",
+    },
+  });
+  gsap.from(".tata .b", {
+    opacity: 0,
+    y: 150,
+    duration: 0.6,
+    stagger: -0.15,
+    scrollTrigger: {
+      trigger: ".tata",
+      scroller: "body",
+      start: "top 70%",
+    },
+  });
+
+  //line svg
+
+  let finalPath = `M 10 10 Q 750 10 1490 10`;
+
+  let string = document.querySelector(".string");
+  string.addEventListener("mouseenter", function (dets) {
+    path = `M 10 10 Q  ${dets.x} ${dets.y} 1490 10`;
+    gsap.to("svg path", {
+      attr: { d: path },
+      duration: 0.3,
+      ease: "power.out",
+    });
+  });
+  string.addEventListener("mouseleave", function () {
+    gsap.to("svg path", {
+      attr: { d: finalPath },
+      duration: 1.5,
+      ease: "elastic.out(1,0.2)",
+    });
+  });
 }
-braketheText();
-
-gsap.from(".tata .a", {
-  opacity: 0,
-  y: 150,
-  duration: 0.6,
-  stagger: 0.15,
-  scrollTrigger: {
-    trigger: ".tata",
-    scroller: "body",
-    start: "top 70%",
-  },
-});
-gsap.from(".tata .b", {
-  opacity: 0,
-  y: 150,
-  duration: 0.6,
-  stagger: -0.15,
-  scrollTrigger: {
-    trigger: ".tata",
-    scroller: "body",
-    start: "top 70%",
-  },
-});
-
-//line svg
-
-let finalPath = `M 10 10 Q 750 10 1490 10`;
-
-let string = document.querySelector(".string");
-string.addEventListener("mouseenter", function (dets) {
-  path = `M 10 10 Q  ${dets.x} ${dets.y} 1490 10`;
-  gsap.to("svg path", {
-    attr: { d: path },
-    duration: 0.3,
-    ease: "power.out",
-  });
-});
-string.addEventListener("mouseleave", function () {
-  gsap.to("svg path", {
-    attr: { d: finalPath },
-    duration: 1.5,
-    ease: "elastic.out(1,0.2)",
-  });
-});
+forFooterallanimations();
 
 // gsap animation code is started
 document.querySelectorAll("h2").forEach((h2) => {
