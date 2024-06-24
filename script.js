@@ -1,49 +1,37 @@
 // Register the plugin
 gsap.registerPlugin(ScrollTrigger);
 
-const vehicles = [
-  {
-    name: "Nexon",
-    imageUrl: "./assets/nexon-ev.avif",
-    links: [
-      { text: "Learn", href: "#" },
-      { text: "Order", href: "#" },
-    ],
-  },
-  {
-    name: "Tiago",
-    imageUrl: "./assets/tiago-ev.avif",
-    links: [
-      { text: "Learn", href: "#" },
-      { text: "Order", href: "#" },
-    ],
-  },
-  {
-    name: "Tigor",
-    imageUrl: "./assets/tigor-ev.avif",
-    links: [
-      { text: "Learn", href: "#" },
-      { text: "Order", href: "#" },
-    ],
-  },
-  {
-    name: "Punch",
-    imageUrl: "./assets/Punch-ev.avif",
-    links: [
-      { text: "Learn", href: "#" },
-      { text: "Order", href: "#" },
-    ],
-  },
-];
-
-const vehiclesContainer = document.getElementById("vehicles-container");
-
-vehicles.map((vehicle) => {
-  const vehicleDiv = document.createElement("div");
-  vehicleDiv.innerHTML = `
+// navbar-menu-close-content
+function menucloseopenrendercontent() {
+  const vehicles = [
+    {
+      name: "Nexon",
+      imageUrl: "./assets/nexon-ev.avif",
+      links: [{ text: "Learn", href: "#" }],
+    },
+    {
+      name: "Tiago",
+      imageUrl: "./assets/tiago-ev.avif",
+      links: [{ text: "Learn", href: "#" }],
+    },
+    {
+      name: "Tigor",
+      imageUrl: "./assets/tigor-ev.avif",
+      links: [{ text: "Learn", href: "#" }],
+    },
+    {
+      name: "Punch",
+      imageUrl: "./assets/Punch-ev.avif",
+      links: [{ text: "Learn", href: "#" }],
+    },
+  ];
+  const vehiclesContainer = document.getElementById("vehicles-container");
+  vehicles.map((vehicle) => {
+    const vehicleDiv = document.createElement("div");
+    vehicleDiv.innerHTML = `
                 <img src="${vehicle.imageUrl}" alt="${
-    vehicle.name
-  }" class="w-full">
+      vehicle.name
+    }" class="w-full">
                 <h2 class="text-2xl font-bold mt-4">${vehicle.name}</h2>
                 <div class="space-x-4 mt-2">
                     ${vehicle.links
@@ -52,42 +40,72 @@ vehicles.map((vehicle) => {
                           `<a href="${link.href}" class="text-blue-500 hover:underline ">${link.text}</a>`
                       )
                       .join("")}
-                </div>
-            `;
-  vehiclesContainer.appendChild(vehicleDiv);
-});
+                </div>`;
+    vehiclesContainer.appendChild(vehicleDiv);
+  });
+  //menu-links
+  const links = [
+    { name: "Digital Showroom", href: "#" },
+    { name: "Test Drive", href: "#" },
+    { name: "Charging Locator", href: "#" },
+    { name: "Dealer Locator", href: "#" },
+    { name: "Request a call back", href: "#" },
+    { name: "Concept Cars", href: "#" },
+    { name: "Rewards", href: "#" },
+    { name: "Exchange Car", href: "#" },
+    { name: "Services", href: "#" },
+    { name: "Accessories", href: "#" },
+    { name: "Account", href: "#" },
+    { name: "About Us", href: "#" },
+    { name: "Sitemap", href: "#" },
+  ];
+  const navContainer = document.getElementById("navContainer");
+  links.map((link) => {
+    const anchor = document.createElement("a");
+    anchor.href = link.href;
+    anchor.textContent = link.name;
+    anchor.className = "block text-gray-700 hover:text-blue-500 mb-2";
+    navContainer.appendChild(anchor);
+  });
+}
+menucloseopenrendercontent();
+// navbar-menu-close-animaiton-content
+function menucloseopenanime() {
+  let tl = gsap.timeline();
+  tl.to(".menu", {
+    top: "0",
+    duration: 0.5,
+  });
+  tl.from("#vehicles-container img", {
+    x: -150,
+    opacity: 0,
+    duration: 0.5,
+    stagger: 0.15,
+    rotate: 45,
+  });
+  tl.from("#navContainer a", {
+    y: 100,
+    opacity: 0,
+    duration: 0.5,
+    stagger: 0.15,
+  });
+  tl.from(".close", {
+    opacity: 0,
+  });
+  tl.pause();
+  document.querySelector("nav button").addEventListener("click", function () {
+    tl.play();
+  });
+  document.querySelector(".close").addEventListener("click", function () {
+    tl.reverse();
+  });
+}
+menucloseopenanime();
 
-const links = [
-  { name: "Digital Showroom", href: "#" },
-  { name: "Test Drive", href: "#" },
-  { name: "Charging Locator", href: "#" },
-  { name: "Dealer Locator", href: "#" },
-  { name: "Request a call back", href: "#" },
-  { name: "Concept Cars", href: "#" },
-  { name: "Rewards", href: "#" },
-  { name: "Exchange Car", href: "#" },
-  { name: "Services", href: "#" },
-  { name: "Accessories", href: "#" },
-  { name: "Account", href: "#" },
-  { name: "About Us", href: "#" },
-  { name: "Sitemap", href: "#" },
-];
-
-const navContainer = document.getElementById("navContainer");
-
-links.map((link) => {
-  const anchor = document.createElement("a");
-  anchor.href = link.href;
-  anchor.textContent = link.name;
-  anchor.className = "block text-gray-700 hover:text-blue-500 mb-2";
-  navContainer.appendChild(anchor);
-});
-// our ranges of the products
-
-gsap.to("#page3-element", {
+gsap.to(".page3-element", {
   transform: "translate(-33%)",
   scrollTrigger: {
-    trigger: "#page3-element",
+    trigger: ".page3-element",
     scroller: "body",
     start: "top 10%",
     end: "top -70%",
@@ -266,32 +284,4 @@ document.querySelectorAll("h4").forEach((h4) => {
       ease: "power2.out",
     });
   });
-});
-
-
-let tl = gsap.timeline();
-tl.to(".menu", {
-  top: "0",
-  duration:.6,
-})
-tl.from("#vehicles-container img", {
-  opacity: 0,
-  duration:.8,
-  stagger:.2
-});
-tl.from("#navContainer a", {
-  x: 100,
-  opacity: 0,
-  duration: .7,
-  stagger:.1
-});
-tl.from(".close", {
-  opacity:0
-})
-tl.pause();
-document.querySelector("nav button").addEventListener("click", function () {
-  tl.play();
-})
-document.querySelector(".close").addEventListener("click", function () {
-  tl.reverse();
 });

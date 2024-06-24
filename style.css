@@ -1,96 +1,68 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 @font-face {
-    font-family: nb;
-    src: url(./public/NBInternationalProBoo.ttf);
+  font-family: nb;
+  src: url(./public/NBInternationalProBoo.ttf);
 }
-
 @font-face {
-    font-family: rejo;
-    src: url(./public/Rejouice-Headline.ttf);
+  font-family: rejo;
+  src: url(./public/Rejouice-Headline.ttf);
 }
-
 body {
-    background-color: #faf8f3;
-    font-family: "Poppins", sans-serif;
-    overflow-x: hidden;
+  background-color: #faf8f3;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
-
 .underline {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: black;
-    transform: scaleX(0);
-    transform-origin: right;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: right;
 }
-
-.land{
-    background-image: url(./assets/beyond-powercover1.jpeg);
-    background-position: center;
-    background-size: cover;
+.land {
+  background-image: url(./assets/beyond-powercover1.jpeg);
+  background-position: center;
+  background-size: cover;
 }
 .tata {
-    overflow: hidden;
-    font-family: rejo;
+  overflow: hidden;
+  font-family: rejo;
 }
-
 .tata span {
-    display: inline-block;
+  display: inline-block;
 }
+.page3-element {
+  .box {
+    width: 32.2%;
+    height: 100%;
+    position: relative;
 
-/* our rages othe products */
-#page3-element {
-    margin-top: 2vw;
-    height: 75vh;
-    width: 150%;
-    display: flex;
-    align-items: center;
-    gap: 30px;
-
-
-    .box {
-        width: 32.2%;
-        height: 100%;
-        position: relative;
-
-        video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            position: absolute;
-            z-index: 9;
-        }
-
-        img {
-            z-index: 10;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            transition: all linear 0.8s;
-        }
-
-        img:hover {
-            opacity: 0;
-        }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      position: absolute;
+      z-index: 9;
     }
-}
 
-.page3-nav {
-    margin-top: 10vw;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    span {
-        font-size: 1.7vw;
-        font-family: nb;
+    img {
+      z-index: 10;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: all linear 0.8s;
     }
+
+    img:hover {
+      opacity: 0;
+    }
+  }
 }
