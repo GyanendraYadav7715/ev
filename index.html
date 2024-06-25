@@ -17,13 +17,14 @@
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
     rel="stylesheet" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
   <section id="Performance">
     <div class="w-full h-screen land">
       <div id="navbar-menu-close-animation-content">
-        <nav class="border-gray-200 bg-[#ffffff1d] backdrop-blur-4 shadow-lg absolute w-full">
+        <nav class="border-gray-200 bg-[#ffffff1d] backdrop-blur-4 shadow-lg absolute w-full z-[10]">
           <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-2 py-2">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
               <img src="./assets/tata-ev-logo-70x40-black.avif" alt="TATA.EV" class="h-20" />
@@ -36,6 +37,12 @@
                     </text>
                   </svg> -->
             </a>
+            <div id="nav-part2" class="flex gap-7">
+              <h4><a href="">Register</a></h4>
+              <h4><a href="">Work</a></h4>
+              <h4><a href="">Sudio</a></h4>
+              <h4><a href="">Contact</a></h4>
+            </div>
             <button data-collapse-toggle="navbar-hamburger" type="button"
               class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm text-[#1a19199e] rounded-lg focus:outline-none hover:text-[#000000de] cursor-pointer"
               aria-controls="navbar-hamburger" aria-expanded="false">
@@ -68,7 +75,7 @@
             </div>
           </div>
         </nav>
-        <div class="menu w-full h-[76vh] bg-[#f7f3ee] backdrop-blur-1 flex absolute -top-full">
+        <div class="menu w-full h-[76vh] bg-[#f7f3ee] backdrop-blur-1 flex absolute -top-full z-[10] ">
           <div class="w-[70%] h-full selection: text-center">
             <div id="vehicles-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-8 py-10"></div>
           </div>
@@ -81,6 +88,18 @@
           </div>
         </div>
       </div>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="./assets/beyond-powercover1.jpeg" alt=""></div>
+          <div class="swiper-slide"><img src="./assets/beyond-powercover1.jpeg" alt=""></div>
+          <div class="swiper-slide"><img src="./assets/beyond-powercover1.jpeg" alt=""></div>
+          <div class="swiper-slide"><img src="./assets/beyond-powercover1.jpeg" alt=""></div>
+
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
 
     </div>
   </section>
@@ -90,7 +109,7 @@
     </div>
   </section>
   <section id="Ourvision">
-    <div id="page2">
+    <div id="page3" class="mx-[3vw]">
       <div class="text-center mb-10">
         <h4 class="text-[1.4vw] relative inline-block">
           Our vision
@@ -101,6 +120,9 @@
           with passion to enhance the quality of life.
         </h2>
       </div>
+
+      <video src="/ourvision.mp4" autoplay loop muted class=" rounded-lg mt-[4vw] relative w-full"></video>
+
       <div id="bottom">
         <div id="heading-part">
           <h1>
@@ -120,7 +142,7 @@
         </div>
 
         <div id="page2-right">
-          <video src="./public/ourvision.mp4" loop autoplay muted></video>
+          <video src="/ourvision.mp4" loop autoplay muted></video>
           <p>
             We are making responsible choices. By prioritising sustainable
             mobility, safety, emission reduction and use of eco-friendly
@@ -158,19 +180,122 @@
   </section>
   <section id="Ever growing charging network in India">
     <div class="container mx-auto p-8 charging">
-      <div class="text-center mb-10">
+      <div class="text-center mb-[6vw]">
         <h4 class="text-[1.4vw] relative inline-block">
           Ever growing charging network in India
           <span class="underline"></span>
         </h4>
-        <h2 class="mt-[1vw] text-[2vw] leading-[2vw]">
+        <h2 class="mt-[3vw] text-[2vw] leading-[2vw] ">
           With 8000+ charging stations across the country, you can rest
           assured that we will have your journey covered.<br />
           We also offer 24x7 emergency charging <br />
           support in five cities as part of our seamless charging experience.
         </h2>
+
       </div>
-      <div class="flex flex-col md:flex-row border-2 border-black rounded-lg h-screen bg-purple-700"></div>
+      <div class="flex flex-col md:flex-row border-2 border-black rounded-lg w-full  min-h-screen ">
+        <!-- Charging Location Section -->
+        <div class="container mx-auto p-6 ">
+          <h2 class="text-2xl font-semibold mb-4 text-center">Find your nearest charging location</h2>
+          <input
+            class="text-lg font-medium mt-5 w-full px-5 py-3 rounded-md  border-2 border-[#9b9a9a] focus:outline-none"
+            placeholder="Mumbai" />
+          <hr class="my-2">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+
+
+              <ul class="bg-black">
+                <li class="mb-2">
+                  <a href="#" class="text-white hover:underline">LC EV hub shamshabad</a>
+                  <p class="text-gray-600">Ort Shamshabad, Hyderabad, Telangana</p>
+                  <a href="#" class="text-sm text-blue-400">Get directions →</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-red-500">Unity Mall Vasai DC Charger</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-red-500">Hotel Classik Dombivali DC Charger</a>
+                </li>
+                <li class="mb-2">
+                  <a href="#" class="text-red-500">R City Mall, Ghatkopar</a>
+                </li>
+              </ul>
+              <div class="mt-4">
+                <h4 class="text-md font-semibold">Key</h4>
+                <div class="flex flex-wrap gap-2 mt-2">
+                  <span
+                    class="inline-flex items-center px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-full">Aargo</span>
+                  <span
+                    class="inline-flex items-center px-2 py-1 bg-green-100 text-green-800 text-xs font-medium rounded-full">BPCL</span>
+                  <span
+                    class="inline-flex items-center px-2 py-1 bg-blue-200 text-blue-900 text-xs font-medium rounded-full">CHARGE
+                    ZONE</span>
+                  <span
+                    class="inline-flex items-center px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-full">Chargegrid</span>
+                  <span
+                    class="inline-flex items-center px-2 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-full">Electrifi</span>
+                  <span
+                    class="inline-flex items-center px-2 py-1 bg-red-100 text-red-800 text-xs font-medium rounded-full">Zeon
+                    Charging</span>
+                  <span
+                    class="inline-flex items-center px-2 py-1 bg-gray-200 text-gray-900 text-xs font-medium rounded-full">Fortum
+                    Charge & Drive IN</span>
+                  <span
+                    class="inline-flex items-center px-2 py-1 bg-yellow-200 text-yellow-900 text-xs font-medium rounded-full">Lion
+                    Charge</span>
+                </div>
+              </div>
+            </div>
+            <div class="map-container bg-black   ">
+              <!-- Google Map Placeholder -->
+              <iframe src="https://maps.google.com/maps?q=Mumbai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                class="w-full h-full rounded-lg"></iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- Estimated Savings Section -->
+        <div class="container mx-auto p-6  bg-[#f8f8f8] rounded-lg shadow-md">
+          <h2 class="text-2xl font-semibold mb-4 text-center">Estimated Savings (Over 5 Years)</h2>
+          <div class="text-black mt-8 mb-10 text-xl text-center">Ever-rising fuel prices becoming a huge concern? Switch
+            to electric and see how driving
+            an electric vehicle can be easy on your pocket and the planet.</div>
+          <div class="grid grid-cols-1 gap-4 text-center mt-7">
+            <div class="inline-block">
+              <label class="block text-gray-700 mb-2">Daily Commute: <span id="commute-value">39 km</span></label>
+              <input type="range" min="0" max="100" value="39" class="w-1/2 mb-4" id="daily-commute">
+              <label class="block text-gray-700 mb-2">Fuel price [price/litre]: <span
+                  id="fuel-price-value">₹98</span></label>
+              <input type="range" min="50" max="150" value="98" class="w-1/2" id="fuel-price">
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <div class="flex items-center justify-center">
+                  <img src="./assets/Vector.png" alt="" class="">
+                </div>
+                <div class="text-lg font-medium text-gray-700 mb-2">Fuel cost savings</div>
+                <div class="text-2xl font-bold text-gray-900 mb-4">₹362,583</div>
+              </div>
+              <div>
+                <div class="flex items-center justify-center">
+                  <img src="./assets/Vector.png" alt="" class="">
+                </div>
+                <div class="text-lg font-medium text-gray-700 mb-2">Equivalent Tailpipe CO2 Reduction</div>
+                <div class="text-2xl font-bold text-gray-900 mb-4">10.32 Million grams</div>
+              </div>
+
+            </div>
+            <div class="">
+              <div class="flex items-center justify-center">
+                <img src="./assets/Vector.png" alt="" class="">
+              </div>
+              <div class="text-lg font-medium text-gray-700 mb-2">Equivalent to CO2 reduction</div>
+              <div class="text-2xl font-bold text-gray-900">478 Full grown trees</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
   <section id="Our Range">
@@ -186,7 +311,7 @@
           go.ev. Driven over 2 billion kms
         </h2>
       </div>
-      <div class="page3-nav mt-[8vw] flex items-center justify-between">
+      <div class="page3-nav mt-[6vw] flex items-center justify-between">
         <span class="text-[1.7vw] font-nb">Transforming visions into reality.</span><span
           class="text-[1.7vw] font-nb">↵See the products</span>
       </div>
@@ -199,25 +324,25 @@
         <div class="box">
           <img src="./assets/beyond-powercover1.jpeg" alt="" />
 
-          <video src="./public/punchcover.webm" loop autoplay muted></video>
+          <video src="./punchcover.webm" loop autoplay muted></video>
         </div>
         <div class="box">
           <img src="./assets/cover2.png" alt="" />
-          <video src="./public/nexoncover.mp4" loop autoplay muted></video>
+          <video src="/nexoncover.mp4" loop autoplay muted></video>
         </div>
         <div class="box">
           <img src="./assets/cover3.webp" alt="" />
-          <video src="./public/taigocover.mp4" loop autoplay muted></video>
+          <video src="/taigocover.mp4" loop autoplay muted></video>
         </div>
         <div class="box">
           <img src="./assets/cover4.jpeg" alt="" />
-          <video src="./public/taigorcover.mp4" loop autoplay muted></video>
+          <video src="/taigorcover.mp4" loop autoplay muted></video>
         </div>
       </div>
     </div>
   </section>
   <section id="Schedule a Test Drive">
-    <div class="container mx-auto p-8 Schedule">
+    <div class="container mx-auto p-8 Schedule ">
       <div class="text-center mb-10">
         <h4 class="text-[1.4vw] relative inline-block">
           Schedule a Test Drive
@@ -230,7 +355,7 @@
           TPEML. Contact your nearest Tata Motors dealer for exact prices.
         </h2>
       </div>
-      <div class="flex flex-col md:flex-row border-2 border-black rounded-lg h-screen">
+      <div class="flex flex-col md:flex-row border-2 border-black rounded-lg h-screen mt-[8vw]">
         <div class="md:w-[40%] bg-[#0b0500] flex items-center justify-center">
           <div class="pl-10">
             <h1 class="text-4xl md:text-5xl font-bold leading-tight text-[#efeae3]">
@@ -243,12 +368,12 @@
               it, you can buy online and its yours.
             </p>
             <a href="#"
-              class="p-3 mt-10 bg-[#111111] border-2 border-[#1f1f1f] rounded-md w-40 h-13 flex-1 flex items-center justify-center text-white">Schedule
+              class="p-3 mt-10 bg-[#111111] border-2 border-[#9b9a9a] rounded-md w-40 h-13 flex-1 flex items-center justify-center text-white">Schedule
               Now <i class="ri-arrow-right-down-line"></i></a>
           </div>
         </div>
         <div class="md:w-[60%] mt-8 md:mt-0 overflow-hidden">
-          <!-- <img src="./assets/book-a-test-drive-2.avif" alt="Design Project Execution" class="w-full h-full object-fill "> -->
+
           <video src="./assets/Nexon-ev-Smart-Digital-DRLs.mp4" class="w-full h-full object-cover" loop muted
             autoplay></video>
         </div>
@@ -320,7 +445,7 @@
               class="ri-twitter-x-line text-3xl"></i></a>
         </div>
 
-        <h1 class="text-center text-[17vw] font-bold mb-10 leading-[20vw] tata">
+        <h1 class="text-center text-[17vw] font-bold mb-10 leading-[20vw] tata overflow-hidden font-['rejo']">
           tata-motors
         </h1>
 
@@ -351,6 +476,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
     integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 

@@ -1,19 +1,31 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @font-face {
   font-family: nb;
   src: url(./public/NBInternationalProBoo.ttf);
 }
+
 @font-face {
   font-family: rejo;
   src: url(./public/Rejouice-Headline.ttf);
 }
+
 body {
   background-color: #faf8f3;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
 }
+
+.container a {
+  display: inline-block;
+  padding: 10px;
+  border: 1px solid;
+  text-decoration: none;
+  transition: color 0.3s, border-color 0.3s;
+}
+
 .underline {
   position: absolute;
   bottom: 0;
@@ -24,18 +36,65 @@ body {
   transform: scaleX(0);
   transform-origin: right;
 }
+
 .land {
   background-image: url(./assets/beyond-powercover1.jpeg);
   background-position: center;
   background-size: cover;
 }
-.tata {
-  overflow: hidden;
-  font-family: rejo;
-}
+
+
 .tata span {
   display: inline-block;
 }
+
+
+
+#nav-part2 h4 {
+  padding: 8px 22px;
+  border: 1px solid rgba(0, 0, 0, 0.37);
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 18px;
+
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s;
+}
+
+#nav-part2 h4 a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.776);
+  position: relative;
+  z-index: 1;
+  /* Ensure text is above the pseudo-element */
+  transition: color 0.3s;
+}
+
+#nav-part2 h4:hover a {
+  color: white;
+}
+
+#nav-part2 h4::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s ease;
+  border-radius: 10%;
+}
+
+#nav-part2 h4:hover::after {
+  transform: scaleY(1);
+  border-radius: 0;
+}
+
 .page3-element {
   .box {
     width: 32.2%;
@@ -66,3 +125,29 @@ body {
     }
   }
 }
+
+#page3 video {
+  filter:blur(3px) grayscale(20%);
+  transition: filter 0.3s ease;
+}
+
+ .swiper {
+   width: 100%;
+   height: 100%;
+ }
+
+ .swiper-slide {
+   text-align: center;
+   font-size: 18px;
+   background: #fff;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .swiper-slide img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+ }
