@@ -419,3 +419,344 @@ forFooterallanimations();
        prevEl: ".swiper-button-prev",
      },
    });
+
+const locations = [
+  {
+    name: "LC EV hub shamshabad",
+  },
+  {
+    name: "Unity Mall Vasai DC Charger",
+  },
+  {
+    name: "Hotel Classik Dombivali DC Charger",
+  },
+  {
+    name: "R City Mall, Ghatkopar",
+  },
+  {
+    name: "Ginger Mumbai, Andheri East",
+  },
+  {
+    name: "Tata Power RS, Versova",
+  },
+  {
+    name: "Heritage Motors, Panchpakhadi",
+  },
+  {
+    name: "Tata Power, Vikhroli",
+  },
+  {
+    name: "Bombay House, Fort",
+  },
+  {
+    name: "Godrej One, Vikhroli",
+  },
+  {
+    name: "Inderjit Cars, Mira Road",
+  },
+  {
+    name: "IOCL, Breach Candy",
+  },
+  {
+    name: "Puneet, Prabadevi",
+  },
+  {
+    name: "IOCL - FORT Motors, Goregaon",
+  },
+  {
+    name: "IOCL - COCO, Prabhadevi",
+  },
+  {
+    name: "Nathani Heights, Mumbai Central",
+  },
+  {
+    name: "CSMT Station, Fort",
+  },
+  {
+    name: "Mahanagar Gas Limited, Wadala",
+  },
+  {
+    name: "IOCL COCO, BKC",
+  },
+  {
+    name: "Zenith Chemical Works Pvt Ltd, Andheri East",
+  },
+  {
+    name: "Hotel Executive Enclave, Bandra",
+  },
+  {
+    name: "Brookfield, Powai (Spectra)",
+  },
+  {
+    name: "Brookfield, Powai",
+  },
+  {
+    name: "IOCL iCarPort, Andheri East",
+  },
+  {
+    name: "IOCL BARC, Chembur",
+  },
+  {
+    name: "Anand Cinema, Thane East",
+  },
+  {
+    name: "TML Sagar Motors, Patparganj",
+  },
+  {
+    name: "Panvel Industrial Fastners, Mum-Pune Expressway",
+  },
+  {
+    name: "Oberoi Mall, Goregaon",
+  },
+  {
+    name: "CR - Kalyan Station, Kalyan West",
+  },
+  {
+    name: "CR - Lokmanya Tilak Station, Kurla",
+  },
+  {
+    name: "CR - Bhandup Station, Bhandup East",
+  },
+  {
+    name: "WR - Mumbai Central Station, Tardeo",
+  },
+  {
+    name: "Trimurti Petroleum, Panvel",
+  },
+  {
+    name: "Police Petrol Pump, Ambernath",
+  },
+  {
+    name: "The Capital Mall, Nallasopara East",
+  },
+  {
+    name: "Hotel Suba International, Andheri East",
+  },
+  {
+    name: "Hotel Suba Galaxy, Andheri East",
+  },
+  {
+    name: "Hotel Suba Palace, Fort",
+  },
+  {
+    name: "The Taj Mahal Palace, Colaba",
+  },
+  {
+    name: "Pratha NGO, near Bus Depot - Ghatkopar East",
+  },
+  {
+    name: "Pratha NGO, Naydu Colony - Ghatkopar East",
+  },
+  {
+    name: "Pratha NGO, Godrej Colony - Vikhroli",
+  },
+  {
+    name: "Phoenix Marketcity, Kurla",
+  },
+  {
+    name: "Taj Wellington Mews, Colaba",
+  },
+  {
+    name: "Taj Santacruz, Mumbai",
+  },
+  {
+    name: "Vijay Associate, Virar West",
+  },
+  {
+    name: "The Park, CBD Belapur",
+  },
+  {
+    name: "Ashuraj Agencies, Pawne",
+  },
+  {
+    name: "The President, Cuffe Parade",
+  },
+  {
+    name: "Vivanta Navi Mumbai, Turbhe",
+  },
+  {
+    name: "Audi Service, Kalina",
+  },
+  {
+    name: "Taj Lands End, Bandra West",
+  },
+  {
+    name: "Radisson Blu, Marol Metro Station",
+  },
+  {
+    name: "MH | Navi Mumbai | Capital EV Car Rental",
+  },
+  {
+    name: "Neelkanth Business Park, Vidyavihar West",
+  },
+  {
+    name: "Fortune Cars, Navi Mumbai",
+  },
+  {
+    name: "Decathlon Malad",
+  },
+  {
+    name: "MIDC Industrial Area",
+  },
+  {
+    name: "HP Petrol Pump Gaondevi Mandir",
+  },
+  {
+    name: "MG Motor India",
+  },
+  {
+    name: "Haji Ali Jn, Thackeray Udyan",
+  },
+  {
+    name: "MH | Mumbai | Powai #Hiranandani Gardens",
+  },
+  {
+    name: "MH | Mumbai | The Westin Mumbai Powai Lake",
+  },
+  {
+    name: "MH | Mumbai | NSCI - Worli",
+  },
+  {
+    name: "MH | Mumbai | Ro-Ro Service Jetty - Mumbai",
+  },
+  {
+    name: "MH | Mumbai | JW Marriott Sahar",
+  },
+  {
+    name: "MH | Mumbai | JW Marriott Mumbai Juhu (BOMJW)",
+  },
+  {
+    name: "MH | Navi Mumbai | Four Points by Sheraton Navi Mumbai",
+  },
+  {
+    name: "MH | Navi Mumbai | Marriott Executive Apartments - Rupa Renaissance",
+  },
+  {
+    name: "BP-JHAJJAR KOTLI",
+  },
+  {
+    name: "Magenta TTC, Turbhe",
+  },
+  {
+    name: "Prima Bay",
+  },
+  {
+    name: "MG Motors Thane-Fortum (50kw)",
+  },
+  {
+    name: "MSEDCL POWERUP",
+  },
+  {
+    name: "MSEDCL Rustomjee Substation PowerUp",
+  },
+  {
+    name: "MSEDCL Airoli Substation PowerUP",
+  },
+  {
+    name: "MSEDCL Rabale - PowerUpEV (50KW)",
+  },
+  {
+    name: "MSEDCL CBD Belapur - PowerUpEV (50KW)",
+  },
+  {
+    name: "MSEDCL Dream Substation Bhandup W",
+  },
+  {
+    name: "SCCG Thane-ChargeGrid (60kw)",
+  },
+  {
+    name: "Parag Building Khar-ChargeGrid (30kw)",
+  },
+  {
+    name: "Prabhat Building Magenta FC",
+  },
+  {
+    name: "Mahindra First Choice-Pure Energy EV (50kw)",
+  },
+  {
+    name: "BMW Navnit Motors-RechargeEV (24kw)",
+  },
+  {
+    name: "Tata Power, Borivali",
+  },
+  {
+    name: "Sofitel Hotel BKC - Jio BP Pulse",
+  },
+  {
+    name: "Reliance Mall",
+  },
+  {
+    name: "Reliance Acme Mall",
+  },
+  {
+    name: "GreenShift DC 30kW @ Arctica, Kalyan",
+  },
+  {
+    name: "PARAMETER ENGINEERING PROJECTS",
+  },
+  {
+    name: "Trident, Bandra Kurla",
+  },
+  {
+    name: "POM 122kW Ev Charger",
+  },
+  {
+    name: "Tata Power, Salsette",
+  },
+  {
+    name: "MH | MMRDA Parking at BKC Near Dhirubhai Ambani School",
+  },
+  {
+    name: "Trident, Nariman Point",
+  },
+  {
+    name: "Srijan Cheritable trust",
+  },
+  {
+    name: "SWAGAT AUTO",
+  },
+  {
+    name: "KINI HIGHWAY PETROLEUM",
+  },
+  {
+    name: "SHRI MAI FILLING STATION",
+  },
+  {
+    name: "DEBARIGATE FILLING STATION",
+  },
+];
+
+const locationList = document.getElementById("location-list");
+
+locationList.innerHTML = locations
+  .map(
+    (location) =>
+      `<li><span class="mr-4"><i class="ri-map-pin-line"></i></span>${location.name}</li>`
+  )
+  .join("");
+
+var swiper = new Swiper(".swiper-container", {
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  on: {
+    slideChangeTransitionStart: function () {
+      var activeSlide = document.querySelector(".swiper-slide-active");
+      gsap.fromTo(
+        activeSlide,
+        { opacity: 0, y: 50 },
+        { opacity: 1, y: 0, duration: 1 }
+      );
+    },
+  },
+});
