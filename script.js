@@ -729,6 +729,11 @@ var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 30,
   loop: true,
+  autoplay: {
+    delay:5000,
+    disableOnInteraction: false,
+  },
+  speed: 1000,
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -768,7 +773,7 @@ function runAnimation() {
     duration: 0.3,
   });
 
-  time.from(".mySwiper a", {
+  time.from(".landinglinks", {
     y: -40,
     opacity: 0,
     duration: 0.5,
@@ -780,3 +785,37 @@ function runAnimation() {
 document.addEventListener("DOMContentLoaded", () => {
   runAnimation();
 });
+
+
+ function splitTextToChars(element) {
+   const text = element.innerText;
+   const chars = text.split("");
+   element.innerHTML = "";
+   chars.forEach((char) => {
+     const span = document.createElement("span");
+     span.classList.add("char");
+     span.innerText = char;
+     element.appendChild(span);
+   });
+ }
+
+ const quote = document.getElementById("quote");
+ splitTextToChars(quote);
+
+ const chars = document.querySelectorAll(".char");
+
+ const tl = gsap.timeline();
+
+ tl.to(chars, {
+   duration: 0.8,
+   opacity: 1,
+   scale: 1,
+   y: 0,
+   rotationX: 0,
+   ease: "back",
+   stagger: 0.01,
+ });
+
+ document.getElementById("animate").onclick = function () {
+   tl.restart();
+ };
