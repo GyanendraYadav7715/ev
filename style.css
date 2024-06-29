@@ -37,25 +37,18 @@ body {
   transform-origin: right;
 }
 
-.land {
-  background-image: url(./assets/beyond-powercover1.jpeg);
-  background-position: center;
-  background-size: cover;
-}
-
+ 
 
 .tata span {
   display: inline-block;
 }
-
-
 
 #nav-part2 h6 {
   padding: 8px 22px;
   border: 1px solid rgba(0, 0, 0, 0.37);
   border-radius: 20px;
   font-weight: 500;
-  font-size:16px;
+  font-size: 16px;
 
   position: relative;
   overflow: hidden;
@@ -97,7 +90,7 @@ body {
 
 .page3-element {
   .box {
-    width:100%;
+    width: 100%;
     min-height: 100%;
     position: relative;
 
@@ -127,48 +120,19 @@ body {
 }
 
 #page3 video {
-  filter:blur(3px) grayscale(20%);
+  filter: blur(3px) grayscale(20%);
   transition: filter 0.3s ease;
 }
 
- .swiper {
-   width: 100%;
-   height: 100%;
- }
-
- .swiper-slide {
-   text-align: center;
-   font-size: 18px;
-   background: #fff;
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
-
- .swiper-slide img {
-   display: block;
-   width: 100%;
-   height: 100%;
-   object-fit: cover;
- }
-
-    .loactionlist{
+.loactionlist {
   border: 1px solid #2724244f;
- }
-     .loactionlist ul {
-       list-style-type: none;
-       padding: 0;
-     }
-  
-     .loactionlist ul li {
-       padding: 10px;
-       border-bottom: 1px solid #272424;
-     }
-         .swiper-slide {
-           opacity: 0;
-           transition: opacity 0.5s ease;
-         }
-    
-         .swiper-slide-active {
-           opacity: 1;
-         }
+}
+.loactionlist ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.loactionlist ul li {
+  padding: 10px;
+  border-bottom: 1px solid #272424;
+}

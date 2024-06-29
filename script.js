@@ -111,7 +111,6 @@ function headindinganimetion() {
       trigger: "#Ourvision",
       scroller: "body",
       start: "top 10%",
-      
     },
   });
   gsap.from(".charging h2", {
@@ -348,77 +347,60 @@ function forFooterallanimations() {
 }
 forFooterallanimations();
 
-  document.addEventListener("DOMContentLoaded", function () {
-    const video = document.querySelector("#page3 video");
+document.addEventListener("DOMContentLoaded", function () {
+  const video = document.querySelector("#page3 video");
 
-    // Initial animation on load
-    gsap.from(video, {
-      duration: 2,
-      opacity: 0,
-      scale: 0.5,
-      ease: "power4.out",
-      delay: 0.5,
-      y: 50, // Adding vertical slide effect
-      rotationY: 180, // Adding a flip effect
-      scrollTrigger: {
-        trigger: "video ",
-        scroller: "body",
-        start: "top 70%",
-      },
-    });
+  // Initial animation on load
+  gsap.from(video, {
+    duration: 2,
+    opacity: 0,
+    scale: 0.5,
+    ease: "power4.out",
+    delay: 0.5,
+    y: 50, // Adding vertical slide effect
+    rotationY: 180, // Adding a flip effect
+    scrollTrigger: {
+      trigger: "video ",
+      scroller: "body",
+      start: "top 70%",
+    },
+  });
 
-    // Hover animation
-    video.addEventListener("mouseenter", () => {
-      gsap.to(video, {
-        duration: 0.5,
-        scale: 1.1,
-        rotation: 3,
-        boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
-        filter: "blur(0) grayscale(0)"
-       
-      });
-    });
-
-    video.addEventListener("mouseleave", () => {
-      gsap.to(video, {
-        duration: 0.5,
-        scale: 1,
-        rotation: 0,
-        boxShadow: "0 0 0 rgba(0, 0, 0, 0)",
-         filter: "blur(3px) grayscale(20%)",
-      });
+  // Hover animation
+  video.addEventListener("mouseenter", () => {
+    gsap.to(video, {
+      duration: 0.5,
+      scale: 1.1,
+      rotation: 3,
+      boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)",
+      filter: "blur(0) grayscale(0)",
     });
   });
 
+  video.addEventListener("mouseleave", () => {
+    gsap.to(video, {
+      duration: 0.5,
+      scale: 1,
+      rotation: 0,
+      boxShadow: "0 0 0 rgba(0, 0, 0, 0)",
+      filter: "blur(3px) grayscale(20%)",
+    });
+  });
+});
 
-   const commuteSlider = document.getElementById("daily-commute");
-   const commuteValue = document.getElementById("commute-value");
-   const fuelPriceSlider = document.getElementById("fuel-price");
-   const fuelPriceValue = document.getElementById("fuel-price-value");
+const commuteSlider = document.getElementById("daily-commute");
+const commuteValue = document.getElementById("commute-value");
+const fuelPriceSlider = document.getElementById("fuel-price");
+const fuelPriceValue = document.getElementById("fuel-price-value");
 
-   commuteSlider.addEventListener("input", () => {
-     commuteValue.textContent = commuteSlider.value + " km";
-   });
+commuteSlider.addEventListener("input", () => {
+  commuteValue.textContent = commuteSlider.value + " km";
+});
 
-   fuelPriceSlider.addEventListener("input", () => {
-     fuelPriceValue.textContent = "₹" + fuelPriceSlider.value;
-   });
-   var swiper = new Swiper(".mySwiper", {
-     spaceBetween: 30,
-     centeredSlides: true,
-     autoplay: {
-       delay: 2500,
-       disableOnInteraction: false,
-     },
-     pagination: {
-       el: ".swiper-pagination",
-       clickable: true,
-     },
-     navigation: {
-       nextEl: ".swiper-button-next",
-       prevEl: ".swiper-button-prev",
-     },
-   });
+fuelPriceSlider.addEventListener("input", () => {
+  fuelPriceValue.textContent = "₹" + fuelPriceSlider.value;
+});
+ 
 
 const locations = [
   {
@@ -735,12 +717,18 @@ locationList.innerHTML = locations
   )
   .join("");
 
-var swiper = new Swiper(".swiper-container", {
+ 
+
+ 
+
+ 
+
+
+// Initialize the Swiper
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 1,
+  spaceBetween: 30,
   loop: true,
-  autoplay: {
-    delay: 3000,
-    disableOnInteraction: false,
-  },
   pagination: {
     el: ".swiper-pagination",
     clickable: true,
@@ -751,12 +739,44 @@ var swiper = new Swiper(".swiper-container", {
   },
   on: {
     slideChangeTransitionStart: function () {
-      var activeSlide = document.querySelector(".swiper-slide-active");
-      gsap.fromTo(
-        activeSlide,
-        { opacity: 0, y: 50 },
-        { opacity: 1, y: 0, duration: 1 }
-      );
+      runAnimation();
     },
   },
+});
+
+// Function to run animations
+function runAnimation() {
+  let time = gsap.timeline();
+
+  document.querySelectorAll(".animatedImage").forEach((image, index) => {
+    time.from(image, {
+      duration: 0.5,
+      opacity: 0,
+      x: 60,
+      ease: "power3.out",
+    });
+    time.to(image, {
+      duration: 0.2,
+      rotate: 8,
+      scale: 1.2,
+    });
+  });
+
+  time.from(".content h1", {
+    y: 50,
+    opacity: 0,
+    duration: 0.3,
+  });
+
+  time.from(".mySwiper a", {
+    y: -40,
+    opacity: 0,
+    duration: 0.5,
+    stagger: 0.25,
+  });
+}
+
+// Initial animation on DOM content loaded
+document.addEventListener("DOMContentLoaded", () => {
+  runAnimation();
 });
