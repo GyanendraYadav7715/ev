@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: nb;
-  src: url(./public/NBInternationalProBoo.ttf);
+  src: url(/NBInternationalProBoo.ttf);
 }
 
 @font-face {
   font-family: rejo;
-  src: url(./public/Rejouice-Headline.ttf);
+  src: url(/Rejouice-Headline.ttf);
 }
 
 body {
