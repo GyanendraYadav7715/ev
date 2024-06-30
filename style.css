@@ -16,7 +16,7 @@ body {
   background-color: #faf8f3;
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
-  font-family:"rejo";
+   
 }
 .container a {
   display: inline-block;
@@ -128,18 +128,18 @@ body {
   border-bottom: 1px solid #272424;
 }
 
- #quote {
-   font-size: 44px;
-   line-height: 50px;
-   color: #dedede;
- }
+ 
 
- .char {
-   display: inline-block;
-   opacity: 0;
-   transform: scale(0) rotateX(180deg) translateY(80px);
-   transform-origin: 0% 50% -50;
- }
+    .word {
+      display: inline-block;
+      opacity: 0;
+      transform: scale(0) rotateX(180deg) translateY(80px);
+      transform-origin: 0% 50% -50;
+      transition: transform 0.3s ease;
+      /* Add smooth transition for hover */
+      margin-right: 8px;
+      /* Adjust spacing between words */
+    }
 
  button {
    padding: 10px;
@@ -153,4 +153,11 @@ body {
 
  .content h1{
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.581);
+ }
+
+ .productimage{
+   transition: transform 0.3s ease;
+ }
+ .productimage:hover {
+   transform: scale(1.1);
  }

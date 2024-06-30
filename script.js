@@ -56,14 +56,14 @@ function menucloseopenrendercontent() {
     { name: "Accessories", href: "#" },
     { name: "Account", href: "#" },
     { name: "About Us", href: "#" },
-    { name: "Sitemap", href: "#" },
+    
   ];
   const navContainer = document.getElementById("navContainer");
   links.map((link) => {
     const anchor = document.createElement("a");
     anchor.href = link.href;
     anchor.textContent = link.name;
-    anchor.className = "block text-gray-700 hover:text-blue-500 mb-2";
+    anchor.className = "block text-gray-700 hover:text-gray-900 hover:underline mb-2";
     navContainer.appendChild(anchor);
   });
 }
@@ -730,7 +730,7 @@ var swiper = new Swiper(".mySwiper", {
   spaceBetween: 30,
   loop: true,
   autoplay: {
-    delay:5000,
+    delay:8000,
     disableOnInteraction: false,
   },
   speed: 1000,
@@ -755,16 +755,13 @@ function runAnimation() {
 
   document.querySelectorAll(".animatedImage").forEach((image, index) => {
     time.from(image, {
-      duration: 0.5,
+      duration:1,
       opacity: 0,
-      x: 60,
+      x:300,
       ease: "power3.out",
     });
-    time.to(image, {
-      duration: 0.2,
-      rotate: 8,
-      scale: 1.2,
-    });
+
+    
   });
 
   time.from(".content h1", {
@@ -787,35 +784,45 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
- function splitTextToChars(element) {
+ function splitTextToWords(element) {
    const text = element.innerText;
-   const chars = text.split("");
+   const words = text.split(" ");
    element.innerHTML = "";
-   chars.forEach((char) => {
+   words.forEach((word) => {
      const span = document.createElement("span");
-     span.classList.add("char");
-     span.innerText = char;
+     span.classList.add("word");
+     span.innerText = word;
      element.appendChild(span);
    });
  }
 
- const quote = document.getElementById("quote");
- splitTextToChars(quote);
+ const quote = document.getElementsByClassName("quote");
+ splitTextToWords(quote);
 
- const chars = document.querySelectorAll(".char");
+ const words = document.querySelectorAll(".word");
 
  const tl = gsap.timeline();
 
- tl.to(chars, {
+ tl.to(words, {
    duration: 0.8,
    opacity: 1,
    scale: 1,
    y: 0,
    rotationX: 0,
    ease: "back",
-   stagger: 0.01,
+   stagger: 0.1, // Adjust the stagger for words
  });
 
  document.getElementById("animate").onclick = function () {
    tl.restart();
  };
+
+ // Add hover effect
+ words.forEach((word) => {
+   word.addEventListener("mouseenter", () => {
+     gsap.to(word, { scale: 1.5, duration: 0.3 });
+   });
+   word.addEventListener("mouseleave", () => {
+     gsap.to(word, { scale: 1, duration: 0.3 });
+   });
+ });
