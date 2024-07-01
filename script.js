@@ -1,7 +1,7 @@
 gsap.registerPlugin(ScrollTrigger);
 //------------------------------------------------------------------THIS IS OUR STARTING PERFORMANCE SECTION CODE---------------------------------------------------//
 
-// ---------------------------------------------------------------------Navbar-Menu-Close-Content-Rendenring--------------------------------------------------------//
+// -------------------------------------------------------------------Navbar-Menu-Close-Content-Rendenring--------------------------------------------------------//
 function menucloseopenrendercontent() {
   const vehicles = [
     { name: "Nexon", imageUrl: "./assets/nexon-ev.avif", links: [{ text: "Learn", href: "#" }] },
@@ -40,13 +40,13 @@ function menucloseopenrendercontent() {
     const anchor = document.createElement("a");
     anchor.href = link.href;
     anchor.textContent = link.name;
-    anchor.className = "block text-gray-700 hover:text-gray-900 hover:underline mb-2";
+    anchor.className = "block text-gray-700 hover:text-gray-900 hover:underline mb-1";
     navContainer.appendChild(anchor);
   });
 }
 menucloseopenrendercontent();
 
-//------------------------------------------------------------------Navbar-Menu-Close-Open-Animation-Code----------------------------------------------------------
+//------------------------------------------------------------------Navbar-Menu-Close-Open-Animation-Code----------------------------------------------------------//
 function menucloseopenanimation() {
   let menu = gsap.timeline({ paused: true });
   menu.to(".menu", { top: "0", duration: 1 });
@@ -61,7 +61,7 @@ function menucloseopenanimation() {
 }
 menucloseopenanimation();
 
-//------------------------------------------------------------------Navbar-Element-Animation-Code-------------------------------------------------------------------
+//------------------------------------------------------------------Navbar-Element-Animation-Code-------------------------------------------------------------------//
 function navbarAnimation() {
   gsap.timeline()
     .from("#Performance nav a img", { y: -50, duration: 0.5, delay: 1, opacity: 0 })
