@@ -40,7 +40,7 @@ function menucloseopenrendercontent() {
     const anchor = document.createElement("a");
     anchor.href = link.href;
     anchor.textContent = link.name;
-    anchor.className = "block text-gray-700 hover:text-gray-900 hover:underline mb-1";
+    anchor.className = "block text-gray-700 hover:text-gray-900 hover:underline mb-2";
     navContainer.appendChild(anchor);
   });
 }
