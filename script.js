@@ -1,5 +1,9 @@
 // Register the plugin
 gsap.registerPlugin(ScrollTrigger);
+
+
+
+
 // navbar-menu-close-content
 function menucloseopenrendercontent() {
   const vehicles = [
@@ -100,6 +104,31 @@ function menucloseopenanime() {
     tl.reverse();
   });
 }
+var navtime = gsap.timeline();
+navtime.from("#Performance nav a img", {
+  y:-50,
+  duration: .5,
+  delay: 1,
+  opacity:0
+});
+navtime.from("#nav-part2 h6", {
+  y: -50,
+  duration: 0.5,
+  opacity: 0,
+  stagger:.1
+});
+navtime.from("nav button", {
+  x: 50,
+  duration: 0.5,
+  opacity: 0,
+  stagger: 0.1,
+});
+navtime.from(".mySwiper", {
+  opacity: 0,
+  duration:.8
+});
+
+
 menucloseopenanime();
 //all-h2-heading-animation
 function headindinganimetion() {
@@ -717,14 +746,7 @@ locationList.innerHTML = locations
   )
   .join("");
 
- 
-
- 
-
- 
-
-
-// Initialize the Swiper
+ // Initialize the Swiper
 var swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 30,
@@ -826,3 +848,5 @@ document.addEventListener("DOMContentLoaded", () => {
      gsap.to(word, { scale: 1, duration: 0.3 });
    });
  });
+
+
