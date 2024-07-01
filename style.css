@@ -207,3 +207,7 @@ body {
 #navbar-menu-close-animation-content {
   padding-top: 5px;
 }
+
+a{
+  cursor: pointer;
+}
